@@ -1,5 +1,4 @@
 -- create database employee;
-use employee;
 
 -- create table EMP(ID int primary key,name varchar(100),Department varchar(20),Language varchar(20),salary int not null,phone bigint not null);
 
@@ -90,3 +89,9 @@ use employee;
 -- where salary <= 40000;
 -- SET SQL_SAFE_UPDATES = 1;
 -- select * from EMP;
+
+use employee;
+
+select language , max(salary)
+from EMP
+group by language;
