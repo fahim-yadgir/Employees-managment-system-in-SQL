@@ -92,6 +92,32 @@
 
 use employee;
 
-select language , max(salary)
-from EMP
-group by language;
+-- select language , max(salary)
+-- from EMP
+-- group by language;
+
+-- select * from EMP;
+-- select ID,name
+-- from EMP
+-- where name like '%f%';
+
+-- select department,max(salary)
+-- from EMP
+-- group by department;
+
+-- select ID,name ,salary
+-- from EMP 
+-- where salary >= 62000; 
+
+-- select department,sum(salary)
+-- from EMP
+-- where department = "IT"
+-- group by department;
+
+-- select ID , name , phone
+-- from EMP
+-- where phone = 9876543235;
+
+-- select * 
+-- from EMP
+-- where name = "Sameer";
