@@ -1,5 +1,5 @@
 -- create database employee;
-
+use employee;
 -- create table EMP(ID int primary key,name varchar(100),Department varchar(20),Language varchar(20),salary int not null,phone bigint not null);
 
 -- INSERT INTO EMP VALUES
@@ -121,3 +121,16 @@ use employee;
 -- select * 
 -- from EMP
 -- where name = "Sameer";
+
+select * from EMP;
+
+select department,max(salary)
+from EMP
+group by department;
+
+alter table EMP
+add Bonus int not null default 5000;
+SET SQL_SAFE_UPDATES = 0;
+update EMP
+set bonus = 4000
+where department = "IT"
