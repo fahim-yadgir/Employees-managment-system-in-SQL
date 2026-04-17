@@ -83,7 +83,7 @@ use employee;
 -- set salary = salary + 5000
 -- where id = 1-- ;
 -- select * from EMP;
--- SET SQL_SAFE_UPDATES = 0;
+SET SQL_SAFE_UPDATES = 0;
 -- update EMP
 -- set salary = salary + 5000
 -- where salary <= 40000;
@@ -133,4 +133,20 @@ add Bonus int not null default 5000;
 SET SQL_SAFE_UPDATES = 0;
 update EMP
 set bonus = 4000
-where department = "IT"
+where department = "IT";
+
+alter table EMP
+add refferd int;
+
+update EMP
+set refferd = 1
+where ID in (7,4,1,3,6,9,10,19,18,2);
+
+update EMP
+set refferd = 8
+where ID in (23,24,26,28,20,30,40,27);
+
+select a.id,a.name as employee_name,
+b.name as refferd_name
+from EMP a
+inner join EMP b ON a.refferd = b.id;
