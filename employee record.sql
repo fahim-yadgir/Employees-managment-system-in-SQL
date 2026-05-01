@@ -69,7 +69,7 @@ use employee;
 -- 				select max(salary)
 --                 from EMP
 --                 where salary < (select max(salary) from EMP));
--- select * from EMP;
+select * from EMP;
 
 -- select name,language
 -- from EMP 
@@ -150,3 +150,21 @@ select a.id,a.name as employee_name,
 b.name as refferd_name
 from EMP a
 inner join EMP b ON a.refferd = b.id;
+
+select name,avg(salary)from EMP
+group by name;
+
+select name , language ,salary , phone
+from EMP
+where salary > (select avg(salary)from EMP);
+
+select name , salary , phone
+from EMP
+where salary = (select max(salary) from EMP);
+
+
+select name , salary as second_highest_salary , phone
+from EMP
+where salary = (select max(salary)from EMP
+				where salary < (select max(salary)from EMP));
+                
