@@ -167,4 +167,10 @@ select name , salary as second_highest_salary , phone
 from EMP
 where salary = (select max(salary)from EMP
 				where salary < (select max(salary)from EMP));
-                
+			
+select name,avg(salary) from EMP
+group by name;           
+            
+select name , salary , refferd
+from EMP
+where refferd IN (select id from EMP where salary < (select avg(salary)from EMP));
