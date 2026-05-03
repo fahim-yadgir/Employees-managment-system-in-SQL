@@ -180,3 +180,26 @@ from EMP
 where salary > 5000
 group by name,department
 having avg(salary) ;
+
+create view highest_salary as
+select name , department , salary
+from EMP
+where salary = (select max(salary)from EMP);
+
+
+SELECT MAX(salary) AS max_salary 
+FROM EMP;
+
+drop view highest_salary;
+
+select * from highest_salary;
+
+select id,name
+from EMP
+where name = 'Haroon';
+
+update EMP
+set salary = 90000
+where id = 49;
+
+select * from highest_salary;
