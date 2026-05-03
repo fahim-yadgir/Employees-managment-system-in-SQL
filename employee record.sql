@@ -174,3 +174,9 @@ group by name;
 select name , salary , refferd
 from EMP
 where refferd IN (select id from EMP where salary < (select avg(salary)from EMP));
+
+select name,department,max(salary)
+from EMP
+where salary > 5000
+group by name,department
+having avg(salary) ;
