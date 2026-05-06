@@ -201,5 +201,12 @@ where name = 'Haroon';
 update EMP
 set salary = 90000
 where id = 49;
-
+use EMP;
 select * from highest_salary;
+select * from EMP;
+
+select id ,name,department,salary
+from EMP
+where salary = (select max(salary)from EMP
+				where salary < (select max(salary) from EMP));
+                
