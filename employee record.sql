@@ -210,3 +210,22 @@ from EMP
 where salary = (select max(salary)from EMP
 				where salary < (select max(salary) from EMP));
                 
+drop procedure Promotion;                
+delimiter $$
+
+create procedure Promotion(
+IN P_name varchar(100),
+-- IN salary int,
+IN P_Bonus bigint
+)
+begin
+update EMP 
+set Bonus = Bonus + P_Bonus
+where name = P_name;
+select name,salary,bonus
+from EMP;
+end $$
+delimiter ;
+
+call Promotion("Fahim",2000);
+select * from EMP;
