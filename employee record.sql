@@ -229,3 +229,11 @@ delimiter ;
 
 call Promotion("Fahim",2000);
 select * from EMP;
+
+alter table EMP
+add column Total_salary bigint;
+
+
+update EMP
+set Total_salary = salary + Bonus
+where Total_salary is null;
