@@ -233,7 +233,16 @@ select * from EMP;
 alter table EMP
 add column Total_salary bigint;
 
+select *from emp;
+
+update EMP
+set refferd = 49
+where ID in (31,33,25,13);
 
 update EMP
 set Total_salary = salary + Bonus
 where Total_salary is null;
+
+select id,name, count(refferd) as total_refferd
+from EMP
+group by id,name,refferd;
