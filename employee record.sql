@@ -246,3 +246,30 @@ where Total_salary is null;
 select id,name, count(refferd) as total_refferd
 from EMP
 group by id,name,refferd;
+
+select id , name , department,language ,total_salary
+from EMP
+where refferd = 49;
+
+select * from emp
+where refferd is null;
+
+select * from emp
+where refferd is not null;
+
+update emp 
+set refferd = 34
+where id in (37,5,8,14);
+
+select name , Department ,salary
+from emp
+where department = (select max(Department)from emp);
+
+select id , name , Department , salary
+from emp
+where department = (select max(salary) from EMP);
+
+select name , department, salary
+from emp e
+where salary = (select max(salary) from emp
+				where department = e.department);
