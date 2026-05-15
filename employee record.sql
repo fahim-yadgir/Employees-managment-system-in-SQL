@@ -273,3 +273,9 @@ select name , department, salary
 from emp e
 where salary = (select max(salary) from emp
 				where department = e.department);
+                
+                
+select id , name, language , salary
+from emp e
+where salary = (select max(salary)from emp
+				where language = e.language);
