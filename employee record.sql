@@ -274,8 +274,15 @@ from emp e
 where salary = (select max(salary) from emp
 				where department = e.department);
                 
-                
-select id , name, language , salary
-from emp e
-where salary = (select max(salary)from emp
-				where language = e.language);
+select * from emp;
+
+update emp
+set phone = 7385094941
+where id =1;
+
+select * from emp
+where phone = 7385094941;
+
+update emp
+set refferd = 0
+where id = 1;
