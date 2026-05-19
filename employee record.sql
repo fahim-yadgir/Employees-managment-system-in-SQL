@@ -286,3 +286,20 @@ where phone = 7385094941;
 update emp
 set refferd = 0
 where id = 1;
+
+select name,language,department,salary
+from emp
+where salary >=60000;
+
+select name,language,department,salary
+from emp
+where salary >=60000 and language='java';
+
+select * from Total_highest;
+
+create view Total_highest as
+select id,name,department,language ,salary , bonus,total_salary
+from emp
+where total_salary = (select max(total_salary)from emp);
+
+drop view Total_highest;
