@@ -303,3 +303,14 @@ from emp
 where total_salary = (select max(total_salary)from emp);
 
 drop view Total_highest;
+
+select * from EMP;
+
+update EMP
+set name = 'Fahim'
+where id = 7;
+
+select name , count(*) as duplicate_name
+from emp
+group by name
+having count(name) >1;
