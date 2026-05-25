@@ -310,7 +310,29 @@ update EMP
 set name = 'Fahim'
 where id = 7;
 
+select name , salary ,department
+from emp
+where salary = (select max(salary)from emp
+				where salary < (select max(salary) from emp));
+
+
 select name , count(*) as duplicate_name
 from emp
 group by name
-having count(name) >1;
+having count(name) > 1;
+
+select name , salary
+from emp
+where salary = (select max(salary)from emp
+				where department = 'finance');
+
+
+select department , total_salary
+from emp e1
+where total_salary = (select avg(total_salary)from emp e2
+						where e1.department = e2.department
+						group by department);
+                        
+select department , avg(total_salary)
+from emp
+group by department;                
