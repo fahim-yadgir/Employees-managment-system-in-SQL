@@ -336,3 +336,19 @@ where total_salary = (select avg(total_salary)from emp e2
 select department , avg(total_salary)
 from emp
 group by department;                
+
+select language , count(*) as emp_count
+from emp
+where language = 'Python'
+group by department;
+
+select name  , max(salary) as max_salary
+from emp
+group by name 
+having max(salary) > 50000
+order by max_salary desc;
+
+select name , max(bonus) as max_bonus
+from emp
+group by name
+having max(bonus) > 4000;
